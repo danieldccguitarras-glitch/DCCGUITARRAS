@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCCGuitarras | Luthieria e Custom Shop de Alto Padrão</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#121212',
+                            700: '#1a1a1a',
+                            600: '#262626',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#d4af37',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: #f3f4f6;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-100 antialiased selection:bg-amber-500 selection:text-black">
+
+    <!-- Header / Navegação Fixa -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold tracking-wider font-serif text-gold-500 flex items-center gap-2">
+                <i class="fa-solid fa-guitar text-amber-500"></i> DCCGUITARRAS
+            </a>
+
+            <!-- Navegação Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#catalogo" class="hover:text-amber-500 transition">Catálogo</a>
+                <a href="#customshop" class="hover:text-amber-500 transition">Custom Shop</a>
+                <a href="#servicos" class="hover:text-amber-500 transition">Luthieria & Manutenção</a>
+                <a href="#sobre" class="hover:text-amber-500 transition">O Luthier</a>
+                <a href="#depoimentos" class="hover:text-amber-500 transition">Avaliações</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20guitarras%20da%20DCCGuitarras." target="_blank" class="bg-amber-500 hover:bg-amber-600 text-black font-bold px-5 py-2.5 rounded-full text-sm transition transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-amber-500/20">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Fale no WhatsApp
+                </a>
+            </div>
+
+            <!-- Menu Mobile Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-dark-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#catalogo" class="block py-2 text-gray-300 hover:text-amber-500">Catálogo</a>
+            <a href="#customshop" class="block py-2 text-gray-300 hover:text-amber-500">Custom Shop</a>
+            <a href="#servicos" class="block py-2 text-gray-300 hover:text-amber-500">Luthieria & Manutenção</a>
+            <a href="#sobre" class="block py-2 text-gray-300 hover:text-amber-500">O Luthier</a>
+            <a href="#depoimentos" class="block py-2 text-gray-300 hover:text-amber-500">Avaliações</a>
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20guitarras%20da%20DCCGuitarras." target="_blank" class="w-full mt-2 bg-amber-500 text-black font-bold px-4 py-3 rounded-xl flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp Direct
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 overflow-hidden">
+        <!-- Background Glow -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center py-24">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-dark-700 border border-gold-500/30 text-gold-400 text-xs tracking-widest uppercase mb-6 shadow-sm">
+                Luthieria Artesanal & Custom Shop
+            </span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-8 font-serif">
+                A Extensão Perfeita da <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-gold-400 to-amber-600">Sua Sonoridade</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 mb-12 font-light">
+                Instrumentos construídos sob medida com madeiras nobres selecionadas, captação boutique e regulagem cirúrgica para músicos exigentes.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#catalogo" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-black font-bold px-8 py-4 rounded-xl transition duration-300 shadow-xl shadow-amber-500/10 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-guitar"></i> Ver Instrumentos Prontos
+                </a>
+                <a href="#customshop" class="w-full sm:w-auto bg-dark-700 hover:bg-dark-600 border border-dark-600 hover:border-gold-500/50 text-white font-semibold px-8 py-4 rounded-xl transition duration-300 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-sliders"></i> Montar Custom Shop
+                </a>
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-20 pt-12 border-t border-dark-700/60">
+                <div>
+                    <span class="block text-3xl sm:text-4xl font-bold text-gold-400">100%</span>
+                    <span class="text-xs sm:text-sm text-gray-400 tracking-wider">Feito à Mão</span>
+                </div>
+                <div>
+                    <span class="block text-3xl sm:text-4xl font-bold text-gold-400">+15 Anos</span>
+                    <span class="text-xs sm:text-sm text-gray-400 tracking-wider">De Experiência</span>
+                </div>
+                <div>
+                    <span class="block text-3xl sm:text-4xl font-bold text-gold-400">Madeiras</span>
+                    <span class="text-xs sm:text-sm text-gray-400 tracking-wider">Nove Secagem Rigorosa</span>
+                </div>
+                <div>
+                    <span class="block text-3xl sm:text-4xl font-bold text-gold-400">Garantia</span>
+                    <span class="text-xs sm:text-sm text-gray-400 tracking-wider">Vitalícia Estrutural</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo de Guitarras -->
+    <section id="catalogo" class="py-24 bg-dark-800 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold font-serif mb-4">Catálogo de Modelos</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Escolha o seu modelo base ou solicite modificações completas nas especificações de madeira, acabamento e elétrica.</p>
+                
+                <!-- Filtros -->
+                <div class="flex flex-wrap justify-center gap-2 mt-8">
+                    <button onclick="filtrarModelos('todos')" class="filtro-btn active px-5 py-2 rounded-full text-sm font-medium bg-amber-500 text-black transition">Todos</button>
+                    <button onclick="filtrarModelos('strat')" class="filtro-btn px-5 py-2 rounded-full text-sm font-medium bg-dark-700 hover:bg-dark-600 text-gray-300 transition">Stratocaster</button>
+                    <button onclick="filtrarModelos('tele')" class="filtro-btn px-5 py-2 rounded-full text-sm font-medium bg-dark-700 hover:bg-dark-600 text-gray-300 transition">Telecaster</button>
+                    <button onclick="filtrarModelos('lp')" class="filtro-btn px-5 py-2 rounded-full text-sm font-medium bg-dark-700 hover:bg-dark-600 text-gray-300 transition">Single Cut / LP</button>
+                    <button onclick="filtrarModelos('baixo')" class="filtro-btn px-5 py-2 rounded-full text-sm font-medium bg-dark-700 hover:bg-dark-600 text-gray-300 transition">Baixos</button>
+                </div>
+            </div>
+
+            <!-- Grade de Produtos -->
+            <div id="grid-produtos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="produto-card strat bg-dark-900 rounded-2xl overflow-hidden border border-dark-700 hover:border-amber-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 bg-dark-700 relative overflow-hidden flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent z-10 opacity-60"></div>
+                            <i class="fa-solid fa-guitar text-6xl text-gold-500/40"></i>
+                            <span class="absolute top-4 right-4 z-20 bg-amber-500 text-black text-xs font-bold px-3 py-1 rounded-full">Pronta Entrega</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-amber-500 font-semibold tracking-wider uppercase">Stratocaster Custom</span>
+                            <h3 class="text-xl font-bold font-serif mt-1 mb-3">DCC '59 Relic Amber</h3>
+                            <p class="text-sm text-gray-400 mb-4">Corpo em Ash leve, braço em Roasted Maple quartersawn, escala em Rosewood e captação Hand-Wound DCC Alnico V.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-300 mb-6 bg-dark-800 p-3 rounded-xl border border-dark-700">
+                                <span><strong class="text-gold-400">Trastes:</strong> Inox Jescar</span> • 
+                                <span><strong class="text-gold-400">Ponte:</strong> Gotoh Vintage</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-dark-700/40 mt-4">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Valor à vista</span>
+                            <span class="text-xl font-bold text-gold-400">R$ 8.900</span>
+                        </div>
+                        <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20na%20guitarra%20DCC%20'59%20Relic%20Amber." target="_blank" class="bg-amber-500 hover:bg-amber-600 text-black font-bold px-4 py-2.5 rounded-xl text-sm transition">
+                            Encomendar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="produto-card tele bg-dark-900 rounded-2xl overflow-hidden border border-dark-700 hover:border-amber-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 bg-dark-700 relative overflow-hidden flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent z-10 opacity-60"></div>
+                            <i class="fa-solid fa-guitar text-6xl text-gold-500/40"></i>
+                            <span class="absolute top-4 right-4 z-20 bg-dark-700 text-gold-400 border border-gold-500/30 text-xs font-bold px-3 py-1 rounded-full">Custom Shop</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-amber-500 font-semibold tracking-wider uppercase">Telecaster Master</span>
+                            <h3 class="text-xl font-bold font-serif mt-1 mb-3">DCC Tele Blackguard</h3>
+                            <p class="text-sm text-gray-400 mb-4">Corpo em Swamp Ash selecionado, acabamento Butterscotch Blonde nitrocelulose, tarraxas com trava e twist twang autêntico.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-300 mb-6 bg-dark-800 p-3 rounded-xl border border-dark-700">
+                                <span><strong class="text-gold-400">Escala:</strong> Maple</span> • 
+                                <span><strong class="text-gold-400">Raio:</strong> 9.5"</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-dark-700/40 mt-4">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Valor à vista</span>
+                            <span class="text-xl font-bold text-gold-400">R$ 8.200</span>
+                        </div>
+                        <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20no%20modelo%20DCC%20Tele%20Blackguard." target="_blank" class="bg-amber-500 hover:bg-amber-600 text-black font-bold px-4 py-2.5 rounded-xl text-sm transition">
+                            Encomendar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="produto-card lp bg-dark-900 rounded-2xl overflow-hidden border border-dark-700 hover:border-amber-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 bg-dark-700 relative overflow-hidden flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent z-10 opacity-60"></div>
+                            <i class="fa-solid fa-guitar text-6xl text-gold-500/40"></i>
+                            <span class="absolute top-4 right-4 z-20 bg-amber-500 text-black text-xs font-bold px-3 py-1 rounded-full">Top Seller</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-amber-500 font-semibold tracking-wider uppercase">Single Cutaway</span>
+                            <h3 class="text-xl font-bold font-serif mt-1 mb-3">DCC Goldtop '56 P90</h3>
+                            <p class="text-sm text-gray-400 mb-4">Corpo em Mahogany hondurenho, tampo em Maple figured, captadores P90 Custom Handwound e ponte Wraparound TonePros.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-300 mb-6 bg-dark-800 p-3 rounded-xl border border-dark-700">
+                                <span><strong class="text-gold-400">Braço:</strong> Mahogany '59 Shape</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-dark-700/40 mt-4">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Valor à vista</span>
+                            <span class="text-xl font-bold text-gold-400">R$ 9.800</span>
+                        </div>
+                        <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20no%20modelo%20DCC%20Goldtop%20'56%20P90." target="_blank" class="bg-amber-500 hover:bg-amber-600 text-black font-bold px-4 py-2.5 rounded-xl text-sm transition">
+                            Encomendar
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Shop Experience Section -->
+    <section id="customshop" class="py-24 bg-dark-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-amber-500 text-xs font-semibold tracking-widest uppercase">Monte do seu jeito</span>
+                    <h2 class="text-3xl sm:text-5xl font-bold font-serif mt-2 mb-6">DCC Custom Shop: O Instrumento dos Seus Sonhos</h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Não se prenda a padrões de fábrica. Na DCCGuitarras você escolhes cada detalhe: desde o raio da escala e o perfil exato do braço até a sonoridade dos captadores enrolados à mão especificamente para o seu estilo musical (Blues, Jazz, Rock ou Metal).
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i class="fa-solid fa-circle-check text-amber-500"></i> Escolha de madeiras nobres (Mahogany, Ash, Roasted Maple, Ebony)
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i class="fa-solid fa-circle-check text-amber-500"></i> Acabamento em Nitrocelulose Premium (Relic ou NOS)
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i class="fa-solid fa-circle-check text-amber-500"></i> Hardcase case de luxo incluso em todas as encomendas
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20personalizado%20no%20Custom%20Shop%20da%20DCCGuitarras." target="_blank" class="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-black font-bold px-8 py-4 rounded-xl transition duration-300 shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Iniciar Orçamento Custom Shop
+                    </a>
+                </div>
+
+                <div class="bg-dark-800 p-8 rounded-3xl border border-dark-700 relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 opacity-10">
+                        <i class="fa-solid fa-guitar text-9xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-serif mb-6 text-gold-400">Etapas de Construção</h3>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 font-bold shrink-0">1</div>
+                            <div>
+                                <h4 class="font-bold text-white">Briefing & Sonoridade</h4>
+                                <p class="text-sm text-gray-400">Conversamos sobre suas referências de timbre, pegada e estética.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 font-bold shrink-0">2</div>
+                            <div>
+                                <h4 class="font-bold text-white">Seleção de Madeiras</h4>
+                                <p class="text-sm text-gray-400">Você escolhe pessoalmente ou por foto os cortes de madeira com maior ressonância.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 font-bold shrink-0">3</div>
+                            <div>
+                                <h4 class="font-bold text-white">Construção & Luthieria</h4>
+                                <p class="text-sm text-gray-400">Corte CNC de precisão, colagem tradicional e modelagem manual do braço.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 font-bold shrink-0">4</div>
+                            <div>
+                                <h4 class="font-bold text-white">Regulagem Master</h4>
+                                <p class="text-sm text-gray-400">Ajuste de tensor, oitavas, altura de cordas e rastreio de traste PLEK/Manual.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços de Luthieria -->
+    <section id="servicos" class="py-24 bg-dark-800 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-amber-500 text-xs font-semibold tracking-widest uppercase">Oficina Especializada</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-serif mt-2 mb-4">Serviços de Luthieria</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Traga seu instrumento para uma manutenção de alto padrão na bancada profissional da DCCGuitarras.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Serviço 1 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-dark-700 hover:border-amber-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 mb-6 text-xl">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif mb-2">Regulagem Master</h3>
+                    <p class="text-sm text-gray-400 mb-6">Limpeza de escala, hidratação, ajuste de tensor, altura de cordas, oitavação, limagem de nut e alinhamento.</p>
+                    <div class="text-gold-400 font-bold">A partir de R$ 180</div>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-dark-700 hover:border-amber-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 mb-6 text-xl">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif mb-2">Retífica & Troca de Trastes</h3>
+                    <p class="text-sm text-gray-400 mb-6">Instalação de trastes em Inox (Jescar), nivelamento milimétrico, coroamento e polimento espelhado impecável.</p>
+                    <div class="text-gold-400 font-bold">A partir de R$ 550</div>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-dark-700 hover:border-amber-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 mb-6 text-xl">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif mb-2">Blindagem & Parte Elétrica</h3>
+                    <p class="text-sm text-gray-400 mb-6">Blindagem completa de cavidades com fita de cobre, remoção de ruídos, troca de jacks, potenciômetros e chaves.</p>
+                    <div class="text-gold-400 font-bold">A partir de R$ 220</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre o Luthier -->
+    <section id="sobre" class="py-24 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-dark-800 h-96 rounded-3xl border border-dark-700 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent z-10"></div>
+                    <i class="fa-solid fa-user-gear text-9xl text-gold-500/20"></i>
+                    <div class="absolute bottom-6 left-6 z-20">
+                        <span class="text-gold-400 font-bold text-lg block">Diego Carvalho</span>
+                        <span class="text-xs text-gray-400">Luthier Fundador da DCCGuitarras</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-amber-500 text-xs font-semibold tracking-widest uppercase">Tradição & Paixão</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold font-serif mt-2 mb-6">A Arte de Dar Vida ao Som</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        A DCCGuitarras nasceu da busca incessante pelo instrumento perfeito. Cada guitarra construída em nossa oficina passa por um rigoroso processo de seleção de madeiras e testes acústicos antes de chegar às mãos do músico.
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Seja para revitalizar a sua guitarra de palco favorita ou para criar um modelo exclusivo Custom Shop do absoluto zero, nossa missão é entregar uma experiência sonora e tátil incomparável.
+                    </p>
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20visitar%20a%20oficina%20da%20DCCGuitarras." target="_blank" class="inline-flex items-center gap-3 text-gold-400 hover:text-amber-400 font-semibold transition">
+                        Agende uma visita à oficina <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-24 bg-dark-800 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-amber-500 text-xs font-semibold tracking-widest uppercase">Avaliações</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-serif mt-2 mb-4">O Que Dizem os Músicos</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-dark-900 p-8 rounded-2xl border border-dark-700">
+                    <div class="flex text-amber-500 mb-4 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6">"A minha Stratocaster Custom Shop da DCC superou todas as expectativas. O timbre acústico dela é absurdo e a regulagem veio perfeita de fábrica!"</p>
+                    <div class="text-xs font-bold text-gold-400">Marcos Vinícius</div>
+                    <div class="text-xs text-gray-500">Guitarrista de Banda Cover & Estúdio</div>
+                </div>
+
+                <div class="bg-dark-900 p-8 rounded-2xl border border-dark-700">
+                    <div class="flex text-amber-500 mb-4 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6">"Levei minha Les Paul para fazer a troca de trastes e blindagem. Trabalho impecável, o braço ficou uma manteiga para solar. Recomendo demais!"</p>
+                    <div class="text-xs font-bold text-gold-400">Rodrigo Silveira</div>
+                    <div class="text-xs text-gray-500">Músico Independente</div>
+                </div>
+
+                <div class="bg-dark-900 p-8 rounded-2xl border border-dark-700">
+                    <div class="flex text-amber-500 mb-4 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6">"Atendimento fora de série e muita transparência em cada etapa da construção do meu instrumento. A DCCGuitarras é nível internacional!"</p>
+                    <div class="text-xs font-bold text-gold-400">Felipe Mendes</div>
+                    <div class="text-xs text-gray-500">Colecionador</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-dark-700 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="text-center md:text-left">
+                <a href="#" class="text-2xl font-bold tracking-wider font-serif text-gold-500 flex items-center justify-center md:justify-start gap-2 mb-2">
+                    <i class="fa-solid fa-guitar text-amber-500"></i> DCCGUITARRAS
+                </a>
+                <p class="text-sm text-gray-400">Luthieria Artesanal & Custom Shop de Alto Padrão.</p>
+            </div>
+
+            <div class="flex items-center space-x-6 text-xl">
+                <a href="https://instagram.com" target="_blank" class="text-gray-400 hover:text-amber-500 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="text-gray-400 hover:text-amber-500 transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://wa.me/5511999999999" target="_blank" class="text-gray-400 hover:text-amber-500 transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+
+            <div class="text-center md:text-right text-xs text-gray-500">
+                <p>&copy; 2026 DCCGuitarras. Todos os direitos reservados.</p>
+                <p class="mt-1">Desenvolvido com excelência.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Filtro e Mobile Menu -->
+    <script>
+        // Menu Mobile Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Filtro de Modelos
+        function filtrarModelos(categoria) {
+            const botoes = document.querySelectorAll('.filtro-btn');
+            botoes.forEach(b => {
+                b.classList.remove('bg-amber-500', 'text-black');
+                b.classList.add('bg-dark-700', 'text-gray-300');
+            });
+            event.target.classList.remove('bg-dark-700', 'text-gray-300');
+            event.target.classList.add('bg-amber-500', 'text-black');
+
+            const cards = document.querySelectorAll('.produto-card');
+            cards.forEach(card => {
+                if (categoria === 'todos' || card.classList.contains(categoria)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
