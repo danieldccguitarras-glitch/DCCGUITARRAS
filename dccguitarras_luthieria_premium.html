@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCCGuitarras - Arte, Precisão e Tone Premium</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        gold: {
+                            light: '#fef08a',
+                            DEFAULT: '#d4af37',
+                            dark: '#b8860b',
+                        },
+                        dark: {
+                            900: '#0a0a0c',
+                            800: '#121216',
+                            700: '#1a1a22',
+                            600: '#262633',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Glowing & Metallic Effects */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF5C0 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .gold-border-glow:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            border-color: rgba(212, 175, 55, 0.7);
+        }
+        .hero-bg {
+            background: linear-gradient(to bottom, rgba(10, 10, 12, 0.75), rgba(10, 10, 12, 0.98)),
+                        url('https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .wood-texture {
+            background: linear-gradient(to right, rgba(18, 18, 22, 0.95), rgba(18, 18, 22, 0.85)),
+                        url('https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200 font-sans antialiased selection:bg-amber-500 selection:text-black">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center bg-dark-800 text-gold group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid fa-guitar text-xl"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif font-bold text-xl tracking-wider text-white group-hover:text-amber-400 transition-colors">DCCGUITARRAS</span>
+                        <span class="text-[9px] tracking-widest uppercase text-amber-500/80 -mt-1">Luthieria Custom</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex space-x-7 text-sm font-medium">
+                    <a href="#inicio" class="hover:text-amber-400 transition-colors duration-200">Início</a>
+                    <a href="#catalogo" class="hover:text-amber-400 transition-colors duration-200">Catálogo</a>
+                    <a href="#processo" class="hover:text-amber-400 transition-colors duration-200">Processo Custom</a>
+                    <a href="#servicos" class="hover:text-amber-400 transition-colors duration-200">Serviços</a>
+                    <a href="#sobre" class="hover:text-amber-400 transition-colors duration-200">Sobre</a>
+                    <a href="#depoimentos" class="hover:text-amber-400 transition-colors duration-200">Depoimentos</a>
+                    <a href="#contato" class="hover:text-amber-400 transition-colors duration-200">Contato</a>
+                </nav>
+
+                <!-- WhatsApp Header Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="https://wa.me/5551999999999?text=Ol%C3%A1%20DCCGuitarras!%20Gostaria%20de%20saber%20mais%20sobre%20as%20guitarras%20Custom." target="_blank" class="px-5 py-2.5 rounded-full bg-amber-500 hover:bg-amber-600 text-black font-semibold text-sm transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-amber-500/20 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Orçamento</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-gray-300 hover:text-white focus:outline-none p-2" aria-label="Abrir Menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-dark-800 border-b border-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-dark-700 hover:text-amber-400">Início</a>
+            <a href="#catalogo" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-dark-700 hover:text-amber-400">Catálogo</a>
+            <a href="#processo" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-dark-700 hover:text-amber-400">Processo Custom</a>
+            <a href="#servicos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-dark-700 hover:text-amber-400">Serviços</a>
+            <a href="#sobre" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-dark-700 hover:text-amber-400">Sobre A DCCGuitarras</a>
+            <a href="#depoimentos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-dark-700 hover:text-amber-400">Depoimentos</a>
+            <a href="#contato" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-dark-700 hover:text-amber-400">Contato</a>
+            <a href="https://wa.me/5551999999999?text=Ol%C3%A1%20DCCGuitarras!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" class="block text-center mt-4 px-4 py-3 rounded-xl bg-amber-500 text-black font-semibold">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Falar no WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero-bg min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-800/80 border border-gold/30 text-amber-400 text-xs sm:text-sm tracking-wide">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>DCCGuitarras | Custom Shop & Luthieria de Precisão</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl font-serif font-bold text-white leading-tight">
+                        A Perfeição Harmônica entre <span class="gold-gradient-text italic">Arte e Tone</span>
+                    </h1>
+                    
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Construção artesanal sob medida e manutenção especializada. Madeiras nobres selecionadas, captação enrolada à mão e ergonomia refinada para músicos exigentes.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#catalogo" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-bold text-center transition-all duration-300 shadow-xl shadow-amber-500/20 hover:scale-105 flex items-center justify-center gap-3">
+                            <span>Explorar Catálogo</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="https://wa.me/5551999999999?text=Ol%C3%A1%20DCCGuitarras!%20Quero%20solicitar%20um%20or%C3%A7amento%20para%20uma%20guitarra%20customizada." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-gold/50 hover:border-gold bg-dark-800/60 hover:bg-dark-800 text-white font-semibold text-center transition-all duration-300 flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                            <span>Orçamento pelo WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <!-- Highlights stats -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-gray-800 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white font-serif">150+</p>
+                            <p class="text-xs text-gray-400">Guitarras Custom</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white font-serif">12+ <span class="text-amber-500 text-base">Anos</span></p>
+                            <p class="text-xs text-gray-400">De Experiência</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white font-serif">100%</p>
+                            <p class="text-xs text-gray-400">Sob Medida</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white font-serif">5★</p>
+                            <p class="text-xs text-gray-400">Avaliação Média</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Showcase -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-amber-500 to-gold opacity-30 blur-xl"></div>
+                        <div class="relative rounded-2xl bg-dark-800 p-4 border border-gold/30 gold-border-glow">
+                            <img src="https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?q=80&w=800&auto=format&fit=crop" alt="Guitarra Custom DCCGuitarras" class="rounded-xl w-full h-[450px] object-cover">
+                            <div class="absolute bottom-8 left-8 right-8 bg-dark-900/90 backdrop-blur-md p-4 rounded-xl border border-gold/20 flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs text-amber-400 font-semibold uppercase tracking-wider">Custom Shop DCCGuitarras</p>
+                                    <p class="text-white font-serif font-bold">Master Tele Amber Burst</p>
+                                </div>
+                                <a href="#catalogo" class="text-xs bg-amber-500/20 text-amber-300 px-3 py-1.5 rounded-lg border border-amber-500/30 hover:bg-amber-500 hover:text-black transition-all">
+                                    Ver Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG / MODELS SECTION -->
+    <section id="catalogo" class="py-24 bg-dark-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2">Instrumentos de Assinatura</h2>
+                <p class="text-3xl sm:text-5xl font-serif font-bold text-white">Catálogo DCCGuitarras</p>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-gray-400">Cada instrumento é único, construído com madeiras selecionadas e eletrônica de ponta para entregar a sonoridade perfeita.</p>
+                
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-3 mt-8">
+                    <button onclick="filterCatalog('todos')" class="catalog-btn active px-5 py-2 rounded-full text-sm font-medium bg-amber-500 text-black border border-amber-500 transition-all">Todos os Modelos</button>
+                    <button onclick="filterCatalog('strato')" class="catalog-btn px-5 py-2 rounded-full text-sm font-medium bg-dark-700 text-gray-300 border border-gray-700 hover:border-gold/50 transition-all">Stratocaster</button>
+                    <button onclick="filterCatalog('tele')" class="catalog-btn px-5 py-2 rounded-full text-sm font-medium bg-dark-700 text-gray-300 border border-gray-700 hover:border-gold/50 transition-all">Telecaster</button>
+                    <button onclick="filterCatalog('lespaul')" class="catalog-btn px-5 py-2 rounded-full text-sm font-medium bg-dark-700 text-gray-300 border border-gray-700 hover:border-gold/50 transition-all">Les Paul / Singlecut</button>
+                    <button onclick="filterCatalog('baixo')" class="catalog-btn px-5 py-2 rounded-full text-sm font-medium bg-dark-700 text-gray-300 border border-gray-700 hover:border-gold/50 transition-all">Baixos</button>
+                    <button onclick="filterCatalog('customshop')" class="catalog-btn px-5 py-2 rounded-full text-sm font-medium bg-dark-700 text-gray-300 border border-gray-700 hover:border-gold/50 transition-all">Custom Shop Exclusivo</button>
+                </div>
+            </div>
+
+            <!-- Grid de Guitarras -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="catalog-grid">
+                
+                <!-- Model 1 -->
+                <div class="catalog-card strato rounded-2xl bg-dark-900 border border-gray-800 hover:border-gold/50 transition-all duration-300 overflow-hidden group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden h-72">
+                            <img src="https://images.unsplash.com/photo-1550985616-10810253b84d?q=80&w=800&auto=format&fit=crop" alt="DCCGuitarras Vintage Strat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-amber-500 text-black font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Custom Shop</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">DCCGuitarras Vintage Strat '62</h3>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Timbre clássico dos anos 60 com tocabilidade moderna e acabamento nitrocelulose reliquejado sob medida.</p>
+                            
+                            <div class="space-y-2 text-xs text-gray-300 bg-dark-800 p-3 rounded-xl mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-tree text-amber-500/70 mr-1"></i> Corpo:</span>
+                                    <span class="font-medium">Alder Selecionado</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-microchip text-amber-500/70 mr-1"></i> Captação:</span>
+                                    <span class="font-medium">Handwound Custom '62 Set</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-ruler-vertical text-amber-500/70 mr-1"></i> Escala:</span>
+                                    <span class="font-medium">Rosewood (Raio 9.5")</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-800/80 mt-auto">
+                        <div>
+                            <span class="text-xs text-gray-400 block">A partir de</span>
+                            <span class="text-2xl font-bold text-amber-400 font-serif">R$ 8.900</span>
+                        </div>
+                        <button onclick="openOrderModal('DCCGuitarras Vintage Strat \'62', 'R$ 8.900')" class="px-4 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-black font-semibold border border-amber-500/30 text-sm transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-cart-shopping"></i> Encomendar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Model 2 -->
+                <div class="catalog-card tele rounded-2xl bg-dark-900 border border-gray-800 hover:border-gold/50 transition-all duration-300 overflow-hidden group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden h-72">
+                            <img src="https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?q=80&w=800&auto=format&fit=crop" alt="DCCGuitarras Master Tele" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-amber-500 text-black font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Edição Especial</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">DCCGuitarras Master Tele Amber</h3>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Ataque forte, twang marcante e tampo em Flame Maple AAAA com acabamento brilhante Amber Burst.</p>
+                            
+                            <div class="space-y-2 text-xs text-gray-300 bg-dark-800 p-3 rounded-xl mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-tree text-amber-500/70 mr-1"></i> Corpo:</span>
+                                    <span class="font-medium">Swamp Ash + Tampo Flame Maple</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-microchip text-amber-500/70 mr-1"></i> Captação:</span>
+                                    <span class="font-medium">Lindy Fralin Tele Custom</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-ruler-vertical text-amber-500/70 mr-1"></i> Escala:</span>
+                                    <span class="font-medium">Maple Torreficado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-800/80 mt-auto">
+                        <div>
+                            <span class="text-xs text-gray-400 block">A partir de</span>
+                            <span class="text-2xl font-bold text-amber-400 font-serif">R$ 9.400</span>
+                        </div>
+                        <button onclick="openOrderModal('DCCGuitarras Master Tele Amber', 'R$ 9.400')" class="px-4 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-black font-semibold border border-amber-500/30 text-sm transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-cart-shopping"></i> Encomendar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Model 3 -->
+                <div class="catalog-card lespaul rounded-2xl bg-dark-900 border border-gray-800 hover:border-gold/50 transition-all duration-300 overflow-hidden group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden h-72">
+                            <img src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?q=80&w=800&auto=format&fit=crop" alt="DCCGuitarras Singlecut Heritage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">DCCGuitarras Singlecut Heritage</h3>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Sustain infinito, corpo denso em mogno e graves aveludados com humbuckers PAF Alnico 2 de alta precisão.</p>
+                            
+                            <div class="space-y-2 text-xs text-gray-300 bg-dark-800 p-3 rounded-xl mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-tree text-amber-500/70 mr-1"></i> Corpo:</span>
+                                    <span class="font-medium">Mogno Peça Única + Carved Top</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-microchip text-amber-500/70 mr-1"></i> Captação:</span>
+                                    <span class="font-medium">Seymour Duncan PAF '59 Set</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-ruler-vertical text-amber-500/70 mr-1"></i> Escala:</span>
+                                    <span class="font-medium">Jacarandá Caviúna</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-800/80 mt-auto">
+                        <div>
+                            <span class="text-xs text-gray-400 block">A partir de</span>
+                            <span class="text-2xl font-bold text-amber-400 font-serif">R$ 11.200</span>
+                        </div>
+                        <button onclick="openOrderModal('DCCGuitarras Singlecut Heritage', 'R$ 11.200')" class="px-4 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-black font-semibold border border-amber-500/30 text-sm transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-cart-shopping"></i> Encomendar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Model 4 -->
+                <div class="catalog-card baixo rounded-2xl bg-dark-900 border border-gray-800 hover:border-gold/50 transition-all duration-300 overflow-hidden group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden h-72">
+                            <img src="https://images.unsplash.com/photo-1558098329-a11cff621064?q=80&w=800&auto=format&fit=crop" alt="DCCGuitarras Precision Bass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">DCCGuitarras Precision Bass 5ST</h3>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Contrabaixo ativo/passivo de 5 cordas, ponte de alta massa e pré-amplificador versátil de 3 bandas.</p>
+                            
+                            <div class="space-y-2 text-xs text-gray-300 bg-dark-800 p-3 rounded-xl mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-tree text-amber-500/70 mr-1"></i> Corpo:</span>
+                                    <span class="font-medium">Ash Selecionado</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-microchip text-amber-500/70 mr-1"></i> Captação:</span>
+                                    <span class="font-medium">Aguilar AG 5P/J-HC</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-ruler-vertical text-amber-500/70 mr-1"></i> Escala:</span>
+                                    <span class="font-medium">Maple Torreficado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-800/80 mt-auto">
+                        <div>
+                            <span class="text-xs text-gray-400 block">A partir de</span>
+                            <span class="text-2xl font-bold text-amber-400 font-serif">R$ 10.500</span>
+                        </div>
+                        <button onclick="openOrderModal('DCCGuitarras Precision Bass 5ST', 'R$ 10.500')" class="px-4 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-black font-semibold border border-amber-500/30 text-sm transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-cart-shopping"></i> Encomendar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Model 5 -->
+                <div class="catalog-card customshop strato rounded-2xl bg-dark-900 border border-gray-800 hover:border-gold/50 transition-all duration-300 overflow-hidden group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden h-72">
+                            <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?q=80&w=800&auto=format&fit=crop" alt="DCCGuitarras Modern Shred" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-amber-500 text-black font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">High Performance</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">DCCGuitarras Modern Shred HSS</h3>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Projetada para alta velocidade e versatilidade sonora. Trastes em Inox, raio composto de 12"-16" e ponte Gotoh 510.</p>
+                            
+                            <div class="space-y-2 text-xs text-gray-300 bg-dark-800 p-3 rounded-xl mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-tree text-amber-500/70 mr-1"></i> Corpo:</span>
+                                    <span class="font-medium">Basswood Premium + Tampo Quilt</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-microchip text-amber-500/70 mr-1"></i> Captação:</span>
+                                    <span class="font-medium">Suhr HSS Custom Set</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500"><i class="fa-solid fa-ruler-vertical text-amber-500/70 mr-1"></i> Escala:</span>
+                                    <span class="font-medium">Ébano (Trastes Inox)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-800/80 mt-auto">
+                        <div>
+                            <span class="text-xs text-gray-400 block">A partir de</span>
+                            <span class="text-2xl font-bold text-amber-400 font-serif">R$ 9.800</span>
+                        </div>
+                        <button onclick="openOrderModal('DCCGuitarras Modern Shred HSS', 'R$ 9.800')" class="px-4 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-black font-semibold border border-amber-500/30 text-sm transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-cart-shopping"></i> Encomendar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Custom Shop Request Card -->
+                <div class="catalog-card customshop rounded-2xl bg-gradient-to-br from-dark-900 via-dark-800 to-amber-950/30 border border-gold/40 p-8 flex flex-col justify-between text-center relative overflow-hidden group">
+                    <div class="absolute -right-12 -bottom-12 opacity-10 text-gold group-hover:scale-110 transition-transform duration-500">
+                        <i class="fa-solid fa-sliders text-9xl"></i>
+                    </div>
+                    <div>
+                        <div class="w-16 h-16 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40 flex items-center justify-center mx-auto mb-6 text-2xl">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-3">Projeto DCCGuitarras Custom Shop</h3>
+                        <p class="text-sm text-gray-300 mb-6 leading-relaxed">
+                            Crie um instrumento 100% exclusivo. Escolha bloco de madeira, perfil do braço, ferragens, captadores sob medida e pintura personalizada.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5551999999999?text=Ol%C3%A1%20DCCGuitarras!%20Gostaria%20de%20criar%20um%20projeto%20Custom%20Shop%20exclusivo." target="_blank" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-bold text-sm transition-all duration-300 shadow-lg shadow-amber-500/20">
+                        Iniciar Projeto Exclusivo
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOM SHOP PROCESS SECTION -->
+    <section id="processo" class="py-24 bg-dark-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2">Transparência e Qualidade</h2>
+                <p class="text-3xl sm:text-5xl font-serif font-bold text-white">Processo de Construção Custom Shop</p>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-gray-400">Acompanhe passo a passo a jornada de criação da sua guitarra na DCCGuitarras, do bloco bruto ao instrumento finalizado.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="bg-dark-800 p-6 rounded-2xl border border-gray-800 relative hover:border-gold/40 transition-all">
+                    <span class="text-4xl font-serif font-bold text-amber-500/30 absolute top-4 right-6">01</span>
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center mb-6 text-xl">
+                        <i class="fa-solid fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-white mb-2">1. Briefing & Madeiras</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Definição do modelo, perfil do braço, escala e seleção das peças de madeira nobres com base na densidade e ressonância desejadas.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-dark-800 p-6 rounded-2xl border border-gray-800 relative hover:border-gold/40 transition-all">
+                    <span class="text-4xl font-serif font-bold text-amber-500/30 absolute top-4 right-6">02</span>
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center mb-6 text-xl">
+                        <i class="fa-solid fa-dumpster-fire"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-white mb-2">2. Usinagem & Shape</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Corte de precisão, modelagem manual dos contornos ergonômicos, nivelamento e trastejamento minucioso do braço.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-dark-800 p-6 rounded-2xl border border-gray-800 relative hover:border-gold/40 transition-all">
+                    <span class="text-4xl font-serif font-bold text-amber-500/30 absolute top-4 right-6">03</span>
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center mb-6 text-xl">
+                        <i class="fa-solid fa-spray-can"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-white mb-2">3. Acabamento & Pintura</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Aplicação de selador, pintura custom (Sunburst, Solid, Metallic ou Relic) e camadas de verniz Nitrocelulose/PU de cura controlada.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-dark-800 p-6 rounded-2xl border border-gray-800 relative hover:border-gold/40 transition-all">
+                    <span class="text-4xl font-serif font-bold text-amber-500/30 absolute top-4 right-6">04</span>
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center mb-6 text-xl">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-white mb-2">4. Montagem & Teste</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Blindagem com cobre, montagem do circuito elétrico, instalação do hardware, regulagem fino de oitavas e teste de bancada.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LUTHIERIA & SERVICES SECTION -->
+    <section id="servicos" class="py-24 bg-dark-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2">Ateliê de Manutenção</h2>
+                <p class="text-3xl sm:text-5xl font-serif font-bold text-white">Serviços de Luthieria DCCGuitarras</p>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-gray-400">Manutenção de alta precisão com valores estimados e prazos claros para garantir a performance do seu instrumento.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Service 1 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-gray-800 hover:border-gold/40 transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-black transition-all duration-300 text-2xl">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Regulagem Completa</h3>
+                        <p class="text-sm text-gray-400 mb-6">Ajuste de tensor, regulagem de oitavas, altura do nut, ação de cordas, limpeza profunda de escala e higienização.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                        <span class="text-gray-400"><i class="fa-regular fa-clock text-amber-500 mr-1"></i> Prazo: 3 a 5 dias</span>
+                        <span class="text-amber-400 font-bold text-sm">A partir de R$ 180</span>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-gray-800 hover:border-gold/40 transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-black transition-all duration-300 text-2xl">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Refret (Troca de Trastes)</h3>
+                        <p class="text-sm text-gray-400 mb-6">Substituição por trastes Alpaca ou Inox Jescar, retífica e retificação com raio ajustado da escala.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                        <span class="text-gray-400"><i class="fa-regular fa-clock text-amber-500 mr-1"></i> Prazo: 7 a 12 dias</span>
+                        <span class="text-amber-400 font-bold text-sm">A partir de R$ 650</span>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-gray-800 hover:border-gold/40 transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-black transition-all duration-300 text-2xl">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Blindagem & Eletrônica</h3>
+                        <p class="text-sm text-gray-400 mb-6">Shielding completo com fita de cobre premium, instalação de captadores e potenciómetros CTS/Bourns sem ruídos.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                        <span class="text-gray-400"><i class="fa-regular fa-clock text-amber-500 mr-1"></i> Prazo: 2 a 4 dias</span>
+                        <span class="text-amber-400 font-bold text-sm">A partir de R$ 150</span>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-gray-800 hover:border-gold/40 transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-black transition-all duration-300 text-2xl">
+                            <i class="fa-solid fa-hammer"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Restauração Estreita</h3>
+                        <p class="text-sm text-gray-400 mb-6">Reparo de trincas de headstock, colagem estrutural de corpos danificados e colagem de frisos.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                        <span class="text-gray-400"><i class="fa-regular fa-clock text-amber-500 mr-1"></i> Prazo: 10 a 20 dias</span>
+                        <span class="text-amber-400 font-bold text-sm">A partir de R$ 350</span>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-gray-800 hover:border-gold/40 transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-black transition-all duration-300 text-2xl">
+                            <i class="fa-solid fa-paint-roller"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Pintura & Relic Custom</h3>
+                        <p class="text-sm text-gray-400 mb-6">Acabamento em Nitrocelulose, refinamento Poly, envelhecimento artificial Relic e cores personalizadas.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                        <span class="text-gray-400"><i class="fa-regular fa-clock text-amber-500 mr-1"></i> Prazo: 25 a 40 dias</span>
+                        <span class="text-amber-400 font-bold text-sm">A partir de R$ 900</span>
+                    </div>
+                </div>
+
+                <!-- Service Quick Contact Card -->
+                <div class="bg-gradient-to-br from-dark-900 to-amber-950/40 p-8 rounded-2xl border border-gold/30 flex flex-col justify-between text-center">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 mx-auto flex items-center justify-center mb-4 text-xl">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Atendimento no Ateliê</h3>
+                        <p class="text-xs text-gray-300 mb-6">Traga seu instrumento para uma avaliação técnica detalhada com horário agendado.</p>
+                    </div>
+                    <a href="https://wa.me/5551999999999?text=Ol%C3%A1%20DCCGuitarras!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20ateli%C3%AA." target="_blank" class="py-3 px-4 bg-amber-500 text-black font-semibold text-xs rounded-xl hover:bg-amber-600 transition-all">
+                        Agendar Horário no WhatsApp
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="sobre" class="py-24 bg-dark-900 wood-texture relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?q=80&w=600&auto=format&fit=crop" alt="Ateliê DCCGuitarras" class="rounded-2xl border border-gray-700 shadow-xl h-64 w-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?q=80&w=600&auto=format&fit=crop" alt="Braço DCCGuitarras" class="rounded-2xl border border-gray-700 shadow-xl h-64 w-full object-cover mt-8">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-dark-900 border border-gold/40 p-6 rounded-2xl hidden sm:block">
+                        <p class="font-serif text-3xl font-bold text-amber-400">100%</p>
+                        <p class="text-xs text-gray-300">Construção Artesanal</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 space-y-6">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-amber-500">Tradição & Excelência</h2>
+                    <h3 class="text-3xl sm:text-5xl font-serif font-bold text-white">Sobre a DCCGuitarras</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        A <strong>DCCGuitarras</strong> é um ateliê de luthieria dedicado ao desenvolvimento de guitarras e baixos de altíssimo padrão. Combinando madeiras de ressonância nobre, ferragens e eletrônica de referência mundial, entregamos instrumentos com identidade tonal única e tocabilidade sem atritos.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Nosso compromisso é dar vida ao tom exato que cada músico procura, aliando o respeito à luthieria tradicional ao uso de ferramentas de medição e afinação de extrema precisão.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-amber-400"></i>
+                            <span class="text-sm text-gray-200">Secagem e controle rigoroso da umidade das madeiras.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-amber-400"></i>
+                            <span class="text-sm text-gray-200">Ferragens Gotoh, Kluson e eletrônica CTS/Bourns.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-amber-400"></i>
+                            <span class="text-sm text-gray-200">Garantia estrutural e acompanhamento pós-venda dedicado.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="depoimentos" class="py-24 bg-dark-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2">Quem Confia</h2>
+                <p class="text-3xl sm:text-5xl font-serif font-bold text-white">Depoimentos sobre a DCCGuitarras</p>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-gray-800 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic text-sm mb-6">
+                            "Minha DCCGuitarras Master Tele Amber superou todas as guitarras de marca famosa que já tive. A tocabilidade do braço e a sustentação do som são impressionantes."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gray-800">
+                        <div class="w-12 h-12 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center font-serif font-bold text-amber-400">
+                            RC
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Rodrigo Costa</h4>
+                            <p class="text-xs text-gray-400">Guitarrista Profissional</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-gray-800 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic text-sm mb-6">
+                            "Deixei minha guitarra vintage na DCCGuitarras para re-fretagem em Inox e blindagem. O trabalho de nivelação ficou perfeito, sem nada de ruído elétrico. Recomendo de olhos fechados!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gray-800">
+                        <div class="w-12 h-12 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center font-serif font-bold text-amber-400">
+                            MA
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Marcelo Almeida</h4>
+                            <p class="text-xs text-gray-400">Músico de Estúdio</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-gray-800 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic text-sm mb-6">
+                            "O atendimento e a paciência para escolher o bloco de madeira e captação ideal durante o meu projeto Custom Shop foram diferenciados. A guitarra ficou perfeita!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gray-800">
+                        <div class="w-12 h-12 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center font-serif font-bold text-amber-400">
+                            FS
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Felipe Santos</h4>
+                            <p class="text-xs text-gray-400">Colecionador</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contato" class="py-24 bg-dark-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2">Contato Direto</h2>
+                        <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Solicite seu Orçamento na DCCGuitarras</h3>
+                        <p class="text-gray-400 mt-4">Preencha o formulário ou entre em contato pelo WhatsApp para tirar dúvidas sobre prazos e projetos personalizados.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">WhatsApp Ateliê</h4>
+                                <p class="text-sm text-gray-400">(51) 99999-9999</p>
+                                <span class="text-xs text-emerald-400">Resposta Rápida</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">E-mail Comercial</h4>
+                                <p class="text-sm text-gray-400">contato@dccguitarras.com.br</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Ateliê DCCGuitarras</h4>
+                                <p class="text-sm text-gray-400">Atendimento presencial mediante agendamento</p>
+                                <p class="text-xs text-gray-500">Porto Alegre, RS - Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7 bg-dark-800 p-8 sm:p-10 rounded-2xl border border-gray-800">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Nome Completo</label>
+                                <input type="text" id="contact-name" required class="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="Seu nome">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">WhatsApp / Celular</label>
+                                <input type="tel" id="contact-phone" required class="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="(00) 00000-0000">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Assunto de Interesse</label>
+                            <select id="contact-subject" class="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors">
+                                <option>Guitarra Custom Shop Sob Medida</option>
+                                <option>Serviço de Luthieria / Regulagem</option>
+                                <option>Troca de Trastes (Refret Inox/Alpaca)</option>
+                                <option>Pintura / Relic Custom</option>
+                                <option>Outras Dúvidas</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Mensagem</label>
+                            <textarea id="contact-message" rows="4" required class="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="Descreva os detalhes da sua ideia ou o serviço necessário para seu instrumento..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-bold text-sm transition-all duration-300 shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Enviar para o WhatsApp DCCGuitarras</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-900 border-t border-gray-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full border border-gold flex items-center justify-center bg-dark-800 text-gold">
+                            <i class="fa-solid fa-guitar text-sm"></i>
+                        </div>
+                        <span class="font-serif font-bold text-lg text-white">DCCGUITARRAS</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Ateliê de luthieria premium especializado em guitarras e baixos artesanais sob medida e serviços de manutenção avançada.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#inicio" class="hover:text-amber-400 transition-colors">Início</a></li>
+                        <li><a href="#catalogo" class="hover:text-amber-400 transition-colors">Catálogo de Guitarras</a></li>
+                        <li><a href="#processo" class="hover:text-amber-400 transition-colors">Processo Custom Shop</a></li>
+                        <li><a href="#servicos" class="hover:text-amber-400 transition-colors">Serviços de Luthieria</a></li>
+                        <li><a href="#sobre" class="hover:text-amber-400 transition-colors">Sobre a DCCGuitarras</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Horário do Ateliê</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li>Segunda a Sexta: 09h às 18h</li>
+                        <li>Sábado: 09h às 13h (Com agendamento)</li>
+                        <li>Atendimento e envios para todo o Brasil</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Redes Sociais DCCGuitarras</h4>
+                    <div class="flex gap-4 text-lg">
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-800 border border-gray-700 flex items-center justify-center text-gray-300 hover:text-amber-400 hover:border-gold transition-all" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-800 border border-gray-700 flex items-center justify-center text-gray-300 hover:text-amber-400 hover:border-gold transition-all" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-800 border border-gray-700 flex items-center justify-center text-gray-300 hover:text-amber-400 hover:border-gold transition-all" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
+                <p>&copy; <span id="year"></span> DCCGuitarras - Luthieria Premium. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ORDER / ENQUIRY MODAL -->
+    <div id="order-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-dark-800 border border-gold/40 rounded-2xl p-6 sm:p-8 max-w-md w-full relative">
+            <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-serif font-bold text-white mb-2">Encomendar DCCGuitarras</h3>
+            <p id="modal-guitar-name" class="text-amber-400 font-semibold mb-1"></p>
+            <p id="modal-guitar-price" class="text-xs text-gray-400 mb-6"></p>
+
+            <form onsubmit="submitModalOrder(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase text-gray-400 mb-1">Seu Nome</label>
+                    <input type="text" id="modal-name" required class="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-2.5 text-white text-sm focus:border-amber-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-gray-400 mb-1">Especificações / Preferências</label>
+                    <textarea id="modal-notes" rows="3" placeholder="Ex: Preferência por perfil de braço em C, cor customizada, escala em Rosewood..." class="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-2.5 text-white text-sm focus:border-amber-500 outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-bold text-sm transition-all flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Continuar no WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT INTERACTIVITY -->
+    <script>
+        // Set dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Catalog Filter Functionality
+        function filterCatalog(category) {
+            const cards = document.querySelectorAll('.catalog-card');
+            const buttons = document.querySelectorAll('.catalog-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-black', 'active');
+                btn.classList.add('bg-dark-700', 'text-gray-300');
+            });
+
+            event.currentTarget.classList.remove('bg-dark-700', 'text-gray-300');
+            event.currentTarget.classList.add('bg-amber-500', 'text-black', 'active');
+
+            cards.forEach(card => {
+                if (category === 'todos' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Functionality
+        let selectedGuitar = '';
+        let selectedPrice = '';
+
+        function openOrderModal(name, price) {
+            selectedGuitar = name;
+            selectedPrice = price;
+            document.getElementById('modal-guitar-name').textContent = name;
+            document.getElementById('modal-guitar-price').textContent = `Investimento estimado: ${price}`;
+            document.getElementById('order-modal').classList.remove('hidden');
+        }
+
+        function closeOrderModal() {
+            document.getElementById('order-modal').classList.add('hidden');
+        }
+
+        function submitModalOrder(e) {
+            e.preventDefault();
+            const name = document.getElementById('modal-name').value;
+            const notes = document.getElementById('modal-notes').value;
+            
+            const message = `Olá DCCGuitarras! Meu nome é ${name}. Gostaria de encomendar/saber mais sobre o modelo *${selectedGuitar}* (${selectedPrice}). ${notes ? 'Preferências: ' + notes : ''}`;
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/5551999999999?text=${encoded}`, '_blank');
+            closeOrderModal();
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const subject = document.getElementById('contact-subject').value;
+            const message = document.getElementById('contact-message').value;
+
+            const fullText = `Olá DCCGuitarras! Meu nome é ${name}. Assunto: ${subject}. Mensagem: ${message}`;
+            const encoded = encodeURIComponent(fullText);
+
+            window.open(`https://wa.me/5551999999999?text=${encoded}`, '_blank');
+        }
+    </script>
+</body>
+</html>
