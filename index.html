@@ -82,6 +82,77 @@
             color: #fb923c;
         }
 
+        .corda-guitarra {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-height: 3.25rem;
+            color: #c7e3ff;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .corda-numero {
+            width: 5rem;
+            flex-shrink: 0;
+            text-align: right;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #8db8dc;
+        }
+
+        .corda-linha {
+            position: relative;
+            flex: 1;
+            height: var(--corda-espessura);
+            min-height: var(--corda-espessura);
+            border-radius: 999px;
+            background: linear-gradient(90deg, #6b7280 0%, #f8fafc 45%, #94a3b8 70%, #475569 100%);
+            box-shadow: 0 1px 3px rgba(255, 255, 255, 0.28), 0 0 0 transparent;
+            transition: transform 120ms ease, box-shadow 180ms ease, filter 180ms ease;
+        }
+
+        .corda-guitarra:hover .corda-linha,
+        .corda-guitarra:focus-visible .corda-linha,
+        .corda-guitarra.vibrando .corda-linha {
+            transform: scaleY(2.3);
+            filter: brightness(1.3);
+            box-shadow: 0 0 14px rgba(249, 115, 22, 0.9);
+            animation: vibrar-corda 110ms ease-in-out 4;
+        }
+
+        .corda-nota {
+            width: 4rem;
+            flex-shrink: 0;
+            color: #fb923c;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .corda-nota small {
+            display: block;
+            color: #c7e3ff;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        @keyframes vibrar-corda {
+            0%, 100% { transform: translateY(0) scaleY(2.3); }
+            25% { transform: translateY(-2px) scaleY(2.3); }
+            75% { transform: translateY(2px) scaleY(2.3); }
+        }
+
+        @media (max-width: 640px) {
+            .corda-guitarra { gap: 0.6rem; }
+            .corda-numero { width: 2.5rem; font-size: 0.65rem; }
+            .corda-nota { width: 3.2rem; font-size: 0.95rem; }
+        }
+
         .logo-abalone {
             display: inline-block;
             font-family: 'Montserrat', sans-serif;
@@ -183,6 +254,46 @@
                     <span class="block text-3xl sm:text-4xl font-bold text-gold-400">Garantia</span>
                     <span class="text-xs sm:text-sm text-gray-400 tracking-wider">Vitalícia Estrutural</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guia de cordas / Diapasão interativo -->
+    <section id="diapasao" class="py-20 bg-dark-800 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <span class="text-amber-500 text-xs font-semibold tracking-widest uppercase">Ouça a afinação padrão</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-serif mt-2 mb-4">Diapasão DCCGuitarras</h2>
+                <p class="text-gray-400">Passe o mouse ou toque em uma corda solta para ouvir sua nota. Da mais grossa para a mais fina: Mi, Lá, Ré, Sol, Si e Mi.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto rounded-3xl bg-dark-900 border border-dark-700 p-5 sm:p-8 shadow-2xl shadow-blue-950/30">
+                <div class="flex items-center gap-4 mb-6 text-xs text-gray-400 uppercase tracking-widest">
+                    <span class="w-20 sm:w-28 text-right">Corda</span>
+                    <span class="flex-1">Passe o mouse para vibrar</span>
+                    <span class="w-16 text-center">Nota</span>
+                </div>
+                <div id="diapasao-cordas" class="space-y-3" role="list" aria-label="Cordas soltas da guitarra">
+                    <button type="button" class="corda-guitarra group" data-note="E2" data-frequency="82.41" aria-label="Corda 6, Mi grave, 82 hertz" role="listitem">
+                        <span class="corda-numero">6ª</span><span class="corda-linha" style="--corda-espessura: 5px"></span><span class="corda-nota">E2 <small>Mi</small></span>
+                    </button>
+                    <button type="button" class="corda-guitarra group" data-note="A2" data-frequency="110" aria-label="Corda 5, Lá, 110 hertz" role="listitem">
+                        <span class="corda-numero">5ª</span><span class="corda-linha" style="--corda-espessura: 4px"></span><span class="corda-nota">A2 <small>Lá</small></span>
+                    </button>
+                    <button type="button" class="corda-guitarra group" data-note="D3" data-frequency="146.83" aria-label="Corda 4, Ré, 147 hertz" role="listitem">
+                        <span class="corda-numero">4ª</span><span class="corda-linha" style="--corda-espessura: 3px"></span><span class="corda-nota">D3 <small>Ré</small></span>
+                    </button>
+                    <button type="button" class="corda-guitarra group" data-note="G3" data-frequency="196" aria-label="Corda 3, Sol, 196 hertz" role="listitem">
+                        <span class="corda-numero">3ª</span><span class="corda-linha" style="--corda-espessura: 2.5px"></span><span class="corda-nota">G3 <small>Sol</small></span>
+                    </button>
+                    <button type="button" class="corda-guitarra group" data-note="B3" data-frequency="246.94" aria-label="Corda 2, Si, 247 hertz" role="listitem">
+                        <span class="corda-numero">2ª</span><span class="corda-linha" style="--corda-espessura: 2px"></span><span class="corda-nota">B3 <small>Si</small></span>
+                    </button>
+                    <button type="button" class="corda-guitarra group" data-note="E4" data-frequency="329.63" aria-label="Corda 1, Mi agudo, 330 hertz" role="listitem">
+                        <span class="corda-numero">1ª</span><span class="corda-linha" style="--corda-espessura: 1.5px"></span><span class="corda-nota">E4 <small>Mi</small></span>
+                    </button>
+                </div>
+                <p id="diapasao-status" class="text-center text-sm text-blue-200/70 mt-7" aria-live="polite">Pronto para afinar</p>
             </div>
         </div>
     </section>
@@ -528,6 +639,50 @@
                 }
             });
         }
+
+        // Diapasão interativo: síntese leve de corda dedilhada, sem arquivos externos.
+        let audioContext;
+        const cordas = document.querySelectorAll('.corda-guitarra');
+        const statusDiapasao = document.getElementById('diapasao-status');
+
+        function tocarCorda(corda) {
+            const frequencia = Number(corda.dataset.frequency);
+            audioContext ??= new (window.AudioContext || window.webkitAudioContext)();
+            if (audioContext.state === 'suspended') audioContext.resume();
+
+            const agora = audioContext.currentTime;
+            const ganho = audioContext.createGain();
+            ganho.gain.setValueAtTime(0.0001, agora);
+            ganho.gain.exponentialRampToValueAtTime(0.22, agora + 0.012);
+            ganho.gain.exponentialRampToValueAtTime(0.0001, agora + 1.8);
+            ganho.connect(audioContext.destination);
+
+            [1, 2, 3].forEach((harmonico, indice) => {
+                const oscilador = audioContext.createOscillator();
+                oscilador.type = indice === 0 ? 'triangle' : 'sine';
+                oscilador.frequency.value = frequencia * harmonico;
+                oscilador.detune.value = indice * 2;
+                oscilador.connect(ganho);
+                oscilador.start(agora);
+                oscilador.stop(agora + 1.8);
+            });
+
+            cordas.forEach((item) => item.classList.remove('vibrando'));
+            corda.classList.add('vibrando');
+            window.setTimeout(() => corda.classList.remove('vibrando'), 500);
+            statusDiapasao.textContent = `Corda ${corda.querySelector('.corda-numero').textContent}: ${corda.dataset.note} — ${frequencia.toFixed(2)} Hz`;
+        }
+
+        cordas.forEach((corda) => {
+            corda.addEventListener('mouseenter', () => tocarCorda(corda));
+            corda.addEventListener('click', () => tocarCorda(corda));
+            corda.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    tocarCorda(corda);
+                }
+            });
+        });
     </script>
 </body>
 </html>
