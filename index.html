@@ -81,6 +81,21 @@
         .text-gold-500 {
             color: #fb923c;
         }
+
+        .logo-abalone {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-image:
+                linear-gradient(120deg, #14213d 0%, #30cfd0 20%, #7b2cbf 39%, #f72585 54%, #30cfd0 72%, #f7d794 88%, #14213d 100%);
+            background-size: 220% 100%;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 0 #07111e, 0 0 10px rgba(48, 207, 208, 0.16);
+            filter: saturate(0.9);
+        }
     </style>
 </head>
 <body class="bg-dark-900 text-gray-100 antialiased selection:bg-amber-500 selection:text-black">
@@ -88,8 +103,8 @@
     <!-- Header / Navegação Fixa -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-dark-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="text-2xl font-bold tracking-wider font-serif text-gold-500 flex items-center gap-2">
-                <i class="fa-solid fa-guitar text-amber-500"></i> DCCGUITARRAS
+<a href="#" class="text-2xl flex items-center gap-2">
+                <i class="fa-solid fa-guitar text-amber-500"></i> <span class="logo-abalone">DCCGUITARRAS</span>
             </a>
 
             <!-- Navegação Desktop -->
