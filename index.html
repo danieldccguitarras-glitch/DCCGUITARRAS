@@ -213,7 +213,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 overflow-hidden">
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 overflow-hidden">
         <!-- Background Glow -->
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:24px_24px]"></div>
         
@@ -259,20 +259,9 @@
     </section>
 
     <!-- Guia de cordas / Diapasão interativo -->
-    <section id="diapasao" class="py-20 bg-dark-800 border-t border-dark-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl mx-auto text-center mb-12">
-                <span class="text-amber-500 text-xs font-semibold tracking-widest uppercase">Ouça a afinação padrão</span>
-                <h2 class="text-3xl sm:text-4xl font-bold font-serif mt-2 mb-4">Diapasão DCCGuitarras</h2>
-                <p class="text-gray-400">Passe o mouse ou toque em uma corda solta para ouvir sua nota. Da mais grossa para a mais fina: Mi, Lá, Ré, Sol, Si e Mi.</p>
-            </div>
-
-            <div class="max-w-5xl mx-auto rounded-3xl bg-dark-900 border border-dark-700 p-5 sm:p-8 shadow-2xl shadow-blue-950/30">
-                <div class="flex items-center gap-4 mb-6 text-xs text-gray-400 uppercase tracking-widest">
-                    <span class="w-20 sm:w-28 text-right">Corda</span>
-                    <span class="flex-1">Passe o mouse para vibrar</span>
-                    <span class="w-16 text-center">Nota</span>
-                </div>
+    <section id="diapasao" class="pt-24 pb-4 sm:pb-6 bg-dark-900 border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto rounded-2xl bg-dark-800 border border-dark-700 p-3 sm:p-5 shadow-2xl shadow-blue-950/30">
                 <div id="diapasao-cordas" class="space-y-3" role="list" aria-label="Cordas soltas da guitarra">
                     <button type="button" class="corda-guitarra group" data-note="E2" data-frequency="82.41" aria-label="Corda 6, Mi grave, 82 hertz" role="listitem">
                         <span class="corda-numero">6ª</span><span class="corda-linha" style="--corda-espessura: 5px"></span><span class="corda-nota">E2 <small>Mi</small></span>
@@ -293,7 +282,6 @@
                         <span class="corda-numero">1ª</span><span class="corda-linha" style="--corda-espessura: 1.5px"></span><span class="corda-nota">E4 <small>Mi</small></span>
                     </button>
                 </div>
-                <p id="diapasao-status" class="text-center text-sm text-blue-200/70 mt-7" aria-live="polite">Pronto para afinar</p>
             </div>
         </div>
     </section>
@@ -644,6 +632,9 @@
         let audioContext;
         const cordas = document.querySelectorAll('.corda-guitarra');
         const statusDiapasao = document.getElementById('diapasao-status');
+        const diapasao = document.getElementById('diapasao');
+        const inicio = document.getElementById('inicio');
+        inicio.parentNode.insertBefore(diapasao, inicio);
 
         function tocarCorda(corda) {
             const frequencia = Number(corda.dataset.frequency);
@@ -670,7 +661,9 @@
             cordas.forEach((item) => item.classList.remove('vibrando'));
             corda.classList.add('vibrando');
             window.setTimeout(() => corda.classList.remove('vibrando'), 500);
-            statusDiapasao.textContent = `Corda ${corda.querySelector('.corda-numero').textContent}: ${corda.dataset.note} — ${frequencia.toFixed(2)} Hz`;
+            if (statusDiapasao) {
+                statusDiapasao.textContent = `Corda ${corda.querySelector('.corda-numero').textContent}: ${corda.dataset.note} — ${frequencia.toFixed(2)} Hz`;
+            }
         }
 
         cordas.forEach((corda) => {
