@@ -82,21 +82,29 @@
             color: #fb923c;
         }
 
-        .corda-guitarra {
-            width: 100%;
+        #diapasao-cordas {
             display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0.7rem;
+        }
+
+        .corda-guitarra {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1rem;
-            min-height: 1.7rem;
+            gap: 0.45rem;
+            min-height: 0;
             color: #c7e3ff;
             text-align: left;
             cursor: pointer;
         }
 
         .corda-numero {
-            width: 5rem;
+            width: auto;
             flex-shrink: 0;
-            text-align: right;
+            text-align: center;
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.12em;
@@ -105,9 +113,10 @@
 
         .corda-linha {
             position: relative;
-            flex: 1;
-            height: var(--corda-espessura);
-            min-height: var(--corda-espessura);
+            flex: none;
+            width: var(--corda-espessura);
+            height: clamp(130px, 18vw, 190px);
+            min-height: 130px;
             border-radius: 999px;
             background:
                 linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(148, 163, 184, 0.85) 24%, rgba(30, 41, 59, 0.95) 52%, rgba(226, 232, 240, 0.72) 76%, rgba(71, 85, 105, 0.95) 100%),
@@ -119,7 +128,7 @@
         .corda-guitarra:hover .corda-linha,
         .corda-guitarra:focus-visible .corda-linha,
         .corda-guitarra.vibrando .corda-linha {
-            transform: scaleY(2.3);
+            transform: scaleX(2.3);
             filter: brightness(1.3);
             box-shadow: 0 0 14px rgba(249, 115, 22, 0.9);
             animation: vibrar-corda 110ms ease-in-out 4;
@@ -144,9 +153,9 @@
         }
 
         @keyframes vibrar-corda {
-            0%, 100% { transform: translateY(0) scaleY(2.3); }
-            25% { transform: translateY(-2px) scaleY(2.3); }
-            75% { transform: translateY(2px) scaleY(2.3); }
+            0%, 100% { transform: translateX(0) scaleX(2.3); }
+            25% { transform: translateX(-2px) scaleX(2.3); }
+            75% { transform: translateX(2px) scaleX(2.3); }
         }
 
         @media (max-width: 640px) {
@@ -261,7 +270,7 @@
     </section>
 
     <!-- Guia de cordas / Diapasão interativo -->
-    <section id="diapasao" class="w-full max-w-3xl mx-auto pt-20 pb-2 bg-transparent">
+    <section id="diapasao" class="w-full max-w-sm ml-auto mr-4 sm:mr-8 pt-20 pb-2 bg-transparent">
         <div class="px-3 sm:px-6">
             <div class="p-0">
                 <div id="diapasao-cordas" class="space-y-1" role="list" aria-label="Cordas soltas da guitarra">
