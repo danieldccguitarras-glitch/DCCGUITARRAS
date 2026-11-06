@@ -652,22 +652,47 @@
             audioContext ??= new (window.AudioContext || window.webkitAudioContext)();
             if (audioContext.state === 'suspended') audioContext.resume();
 
-            const agora = audioContext.currentTime;
-            const ganho = audioContext.createGain();
-            ganho.gain.setValueAtTime(0.0001, agora);
-            ganho.gain.exponentialRampToValueAtTime(0.22, agora + 0.012);
-            ganho.gain.exponentialRampToValueAtTime(0.0001, agora + 1.8);
-            ganho.connect(audioContext.destination);
+        const agora = audioContext.currentTime;
+        const corpo = audioContext.createGain();
+        const filtroCorpo = audioContext.createBiquadFilter();
+        filtroCorpo.type = 'lowpass';
+        filtroCorpo.frequency.setValueAtTime(Math.min(5200, frequencia * 18), agora);
+        filtroCorpo.Q.value = 0.45;
+        corpo.gain.setValueAtTime(0.0001, agora);
+        corpo.gain.exponentialRampToValueAtTime(0.16, agora + 0.008);
+        corpo.gain.exponentialRampToValueAtTime(0.0001, agora + 2.8);
+        corpo.connect(filtroCorpo).connect(audioContext.destination);
 
-            [1, 2, 3].forEach((harmonico, indice) => {
-                const oscilador = audioContext.createOscillator();
-                oscilador.type = indice === 0 ? 'triangle' : 'sine';
-                oscilador.frequency.value = frequencia * harmonico;
-                oscilador.detune.value = indice * 2;
-                oscilador.connect(ganho);
-                oscilador.start(agora);
-                oscilador.stop(agora + 1.8);
-            });
+        // Parciais assimétricas reproduzem o ataque quente e a ressonância de nylon.
+        [1, 2, 3, 4, 5, 6].forEach((harmonico, indice) => {
+            const oscilador = audioContext.createOscillator();
+            const parcial = audioContext.createGain();
+            oscilador.type = indice === 0 ? 'triangle' : 'sine';
+            oscilador.frequency.value = frequencia * harmonico;
+            parcial.gain.value = [1, 0.42, 0.2, 0.11, 0.06, 0.035][indice];
+            oscilador.connect(parcial).connect(corpo);
+            oscilador.start(agora);
+            oscilador.stop(agora + 2.8);
+        });
+
+        // Pequeno ruído filtrado simula o toque do dedo na corda.
+        const duracaoAtaque = 0.045;
+        const buffer = audioContext.createBuffer(1, audioContext.sampleRate * duracaoAtaque, audioContext.sampleRate);
+        const dados = buffer.getChannelData(0);
+        for (let indice = 0; indice < dados.length; indice += 1) {
+            dados[indice] = (Math.random() * 2 - 1) * (1 - indice / dados.length);
+        }
+        const ataque = audioContext.createBufferSource();
+        const filtroAtaque = audioContext.createBiquadFilter();
+        const ganhoAtaque = audioContext.createGain();
+        ataque.buffer = buffer;
+        filtroAtaque.type = 'bandpass';
+        filtroAtaque.frequency.value = Math.min(3600, frequencia * 24);
+        filtroAtaque.Q.value = 0.7;
+        ganhoAtaque.gain.setValueAtTime(0.08, agora);
+        ganhoAtaque.gain.exponentialRampToValueAtTime(0.0001, agora + duracaoAtaque);
+        ataque.connect(filtroAtaque).connect(ganhoAtaque).connect(audioContext.destination);
+        ataque.start(agora);
 
             cordas.forEach((item) => item.classList.remove('vibrando'));
             corda.classList.add('vibrando');
