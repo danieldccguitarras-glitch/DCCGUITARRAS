@@ -183,14 +183,15 @@
 <body class="bg-dark-900 text-gray-100 antialiased selection:bg-amber-500 selection:text-black">
 
     <!-- Header / Navegação Fixa -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-dark-700">
+    <header class="fixed top-0 left-0 right-0 z-50 relative bg-dark-900/90 backdrop-blur-md border-b border-dark-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-<a href="#" class="text-2xl flex items-center gap-2">
-                <img src="/dccguitarras-logo.png" alt="DCCGUITARRAS" class="h-12 w-auto max-w-[190px] object-contain" />
+<a href="#" class="absolute left-[calc(50%+100px)] top-0 z-30 flex h-20 w-64 -translate-x-1/2 items-center justify-center" aria-label="DCCGUITARRAS">
+                <img src="/dccguitarras-wordmark.png" alt="DCCGUITARRAS" class="h-10 w-auto max-w-[240px] translate-x-8 object-contain" />
+                <img src="/dccguitarras-mascot.png" alt="" aria-hidden="true" class="pointer-events-none absolute -left-40 top-1 z-40 h-32 w-auto max-w-none object-contain" />
             </a>
 
             <!-- Navegação Desktop -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+            <nav class="relative z-50 hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="#catalogo" class="hover:text-amber-500 transition">Catálogo</a>
                 <a href="#customshop" class="hover:text-amber-500 transition">Custom Shop</a>
                 <a href="#servicos" class="hover:text-amber-500 transition">Luthieria & Manutenção</a>
@@ -198,7 +199,7 @@
                 <a href="#depoimentos" class="hover:text-amber-500 transition">Avaliações</a>
             </nav>
 
-            <div class="hidden md:flex items-center space-x-4">
+            <div class="relative z-50 hidden md:flex items-center space-x-4">
                 <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20guitarras%20da%20DCCGuitarras." target="_blank" class="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold px-5 py-2.5 rounded-full text-sm transition transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-[#25D366]/20">
                     <i class="fa-brands fa-whatsapp text-lg"></i> Fale no WhatsApp
                 </a>
