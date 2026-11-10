@@ -15,6 +15,12 @@ export default function EditorClient() {
       node.dataset.editorId = `element-${index}`; node.contentEditable = 'true'; node.draggable = true; node.style.outline = '1px dashed rgba(249,115,22,.65)'
       node.addEventListener('dragend', (event) => { const drag = event as DragEvent; const rect = node.getBoundingClientRect(); const x = Math.round(drag.clientX - rect.left - rect.width / 2); const y = Math.round(drag.clientY - rect.top - rect.height / 2); node.style.transform = `translate(${x}px, ${y}px)`; setStatus('Alteração pronta para salvar') })
     }))
+    fetch('/api/layout').then((response) => response.ok ? response.json() : null).then((layout) => layout?.draft?.elements?.forEach((saved: { id?: string; text?: string; transform?: string }) => {
+      const node = doc.querySelector<HTMLElement>(`[data-editor-id="${saved.id}"]`)
+      if (!node) return
+      if (saved.text) node.innerText = saved.text
+      if (saved.transform) node.style.transform = saved.transform
+    }))
   }
   async function save(publish = false) {
     const doc = iframe.current?.contentDocument
