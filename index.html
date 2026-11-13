@@ -167,41 +167,20 @@
             .corda-nota { width: 3.2rem; font-size: 0.95rem; }
         }
 
-        .diapasao-horizontal #diapasao-cordas {
-            gap: 0.4rem;
-            align-items: center;
+        .diapasao-vertical #diapasao-cordas {
+            gap: clamp(0.25rem, 1vw, 0.7rem);
+            align-items: flex-start;
         }
 
-        .diapasao-horizontal .corda-guitarra {
-            flex-direction: row;
+        .diapasao-vertical .corda-guitarra {
+            flex-direction: column;
             gap: 0.35rem;
         }
 
-        .diapasao-horizontal .corda-numero {
-            width: auto;
-            font-size: 0.65rem;
-        }
-
-        .diapasao-horizontal .corda-linha {
-            width: 100%;
-            height: var(--corda-espessura);
-            min-height: var(--corda-espessura);
-        }
-
-        .diapasao-horizontal .corda-guitarra:hover .corda-linha,
-        .diapasao-horizontal .corda-guitarra:focus-visible .corda-linha,
-        .diapasao-horizontal .corda-guitarra.vibrando .corda-linha {
-            transform: scaleY(2.3);
-        }
-
-        .diapasao-horizontal .corda-guitarra.vibrando .corda-linha {
-            animation-name: vibrar-corda-horizontal;
-        }
-
-        @keyframes vibrar-corda-horizontal {
-            0%, 100% { transform: scaleY(2.3) translateY(0); }
-            25% { transform: scaleY(2.3) translateY(-2px); }
-            75% { transform: scaleY(2.3) translateY(2px); }
+        .diapasao-vertical .corda-linha {
+            width: var(--corda-espessura);
+            height: clamp(150px, 19vw, 250px);
+            min-height: 150px;
         }
 
         .logo-abalone {
@@ -309,10 +288,10 @@
     </section>
 
     <!-- Guia de cordas / Diapasão interativo -->
-    <section id="diapasao" class="diapasao-horizontal relative w-full max-w-2xl mx-auto py-2 bg-transparent">
+    <section id="diapasao" class="diapasao-vertical relative w-full max-w-2xl mx-auto py-2 bg-transparent">
         <div class="px-3 sm:px-6">
             <div class="p-0">
-                <div id="diapasao-cordas" class="space-y-1" role="list" aria-label="Cordas soltas da guitarra">
+                <div id="diapasao-cordas" class="gap-2" role="list" aria-label="Cordas soltas da guitarra">
                     <button type="button" class="corda-guitarra group" data-note="E2" data-frequency="82.41" aria-label="Corda 6, Mi grave, 82 hertz" role="listitem">
                         <span class="corda-numero">6</span><span class="corda-linha" style="--corda-espessura: 5px"></span>
                     </button>
