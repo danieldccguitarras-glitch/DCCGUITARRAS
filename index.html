@@ -66,6 +66,36 @@
             letter-spacing: 0.01em;
         }
 
+        .depoimento-balao {
+            position: relative;
+            margin: 0.35rem;
+            padding: 1.75rem 1.5rem 2rem;
+            border: 2px solid #fb923c;
+            border-radius: 26px 20px 24px 18px / 18px 24px 20px 26px;
+            background: #061426;
+            box-shadow: inset 0 0 0 4px rgba(251, 146, 60, 0.06), 4px 4px 0 rgba(251, 146, 60, 0.12);
+        }
+
+        .depoimento-balao::after {
+            position: absolute;
+            bottom: -11px;
+            left: 1.75rem;
+            width: 18px;
+            height: 18px;
+            border-right: 2px solid #fb923c;
+            border-bottom: 2px solid #fb923c;
+            background: #061426;
+            content: "";
+            transform: rotate(45deg);
+        }
+
+        .depoimento-texto {
+            color: #e8f6ff;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
         h1 {
             font-size: clamp(2.5rem, 5vw, 4.75rem);
         }
@@ -587,29 +617,29 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-dark-900 p-8 rounded-2xl border border-dark-700">
+                <div class="depoimento-balao">
                     <div class="flex text-amber-500 mb-4 text-sm gap-1">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-gray-300 text-sm mb-6">"A minha Stratocaster Custom Shop da DCC superou todas as expectativas. O timbre acústico dela é absurdo e a regulagem veio perfeita de fábrica!"</p>
+                    <p class="depoimento-texto mb-6">"A minha Stratocaster Custom Shop da DCC superou todas as expectativas. O timbre acústico dela é absurdo e a regulagem veio perfeita de fábrica!"</p>
                     <div class="text-xs font-bold text-gold-400">Marcos Vinícius</div>
                     <div class="text-xs text-gray-500">Guitarrista de Banda Cover & Estúdio</div>
                 </div>
 
-                <div class="bg-dark-900 p-8 rounded-2xl border border-dark-700">
+                <div class="depoimento-balao">
                     <div class="flex text-amber-500 mb-4 text-sm gap-1">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-gray-300 text-sm mb-6">"Levei minha Les Paul para fazer a troca de trastes e blindagem. Trabalho impecável, o braço ficou uma manteiga para solar. Recomendo demais!"</p>
+                    <p class="depoimento-texto mb-6">"Levei minha Les Paul para fazer a troca de trastes e blindagem. Trabalho impecável, o braço ficou uma manteiga para solar. Recomendo demais!"</p>
                     <div class="text-xs font-bold text-gold-400">Rodrigo Silveira</div>
                     <div class="text-xs text-gray-500">Músico Independente</div>
                 </div>
 
-                <div class="bg-dark-900 p-8 rounded-2xl border border-dark-700">
+                <div class="depoimento-balao">
                     <div class="flex text-amber-500 mb-4 text-sm gap-1">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-gray-300 text-sm mb-6">"Atendimento fora de série e muita transparência em cada etapa da construção do meu instrumento. A DCCGuitarras é nível internacional!"</p>
+                    <p class="depoimento-texto mb-6">"Atendimento fora de série e muita transparência em cada etapa da construção do meu instrumento. A DCCGuitarras é nível internacional!"</p>
                     <div class="text-xs font-bold text-gold-400">Felipe Mendes</div>
                     <div class="text-xs text-gray-500">Colecionador</div>
                 </div>
